@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ChZografou95"
+        android:id="@+id/name"
+        android:layout_marginTop="32dp"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:textSize="18sp"/>
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:layout_width="104dp"
+        android:layout_height="104dp"
+        android:src="@drawable/image1"
+        app:civ_border_color="@color/colorAccent"
+        app:civ_border_width="4dp"
+        android:layout_below="@+id/name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:id="@+id/profile_image"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Followers: 100"
+        android:id="@+id/followers"
+        android:textSize="14sp"
+        android:layout_below="@+id/profile_image"
+        android:layout_marginTop="8dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Following: 50"
+        android:id="@+id/following"
+        android:textSize="14sp"
+        android:layout_below="@+id/profile_image"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="8dp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/colorPrimaryDark"
+        android:layout_below="@+id/followers"
+        android:layout_marginTop="8dp"
+        android:id="@+id/line"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/line"
+        android:id="@+id/profile_menu">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Music "
+            android:id="@+id/music"
+            android:textSize="20sp"
+            android:background="@drawable/btn_drawable_inactive"
+            android:textAllCaps="false"
+            android:textColor="@color/colorPrimaryDark" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Posts "
+            android:id="@+id/posts"
+            android:textSize="20sp"
+            android:layout_marginLeft="16dp"
+            android:background="@drawable/btn_drawable"
+            android:textColor="@color/colorPrimaryDark"
+            android:textAllCaps="false"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/profile_menu"
+        android:layout_marginTop="16dp"
+        android:id="@+id/posts_list">
+        <!--vertical linear layout for one post-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@+id/add_post"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/btn_drawable_inactive">
+            <!--horizontal linear layout for image,(name,date)-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/image1"
+                    app:civ_border_color="@color/colorAccent"
+                    app:civ_border_width="4dp" />
+                <!--vertical linear layout for name,date-->
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp">
+                    <TextView
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="bottom"
+                        android:layout_width="match_parent"
+                        android:text="ChZografou95"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorPrimaryDark"/>
+                    <TextView
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="top"
+                        android:layout_width="match_parent"
+                        android:text="29/9/19"
+                        android:textStyle="italic"
+                        android:textColor="@color/colorPrimaryDark"/>
+                </LinearLayout>
+            </LinearLayout>
+            <!--textview for post content-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="8dp"
+                android:text="Ready for the Hella Mega Tour! #excited"
+                android:textSize="16sp"
+                android:textColor="@color/colorPrimaryDark">
+            </TextView>
+            <!--horizontal linear layout for likes,comments-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingLeft="8dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20 likes"
+                    android:textStyle="italic"
+                    android:textColor="@color/colorPrimaryDark"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2 comments"
+                    android:layout_marginLeft="16dp"
+                    android:textStyle="italic"
+                    android:textColor="@color/colorPrimaryDark"/>
+            </LinearLayout>
+            <!--horizontal linear layout to like,comment-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="Like"/>
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="Comment"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimaryDark"
+        android:layout_above="@+id/bottom_menu"
+        android:layout_marginTop="8dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/bottom_menu"
+        android:layout_marginTop="8dp">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:id="@+id/home_icon"
+            android:src="@drawable/home_icon" />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:id="@+id/profile_icon"
+            android:src="@drawable/profile_icon"
+            android:background="@color/colorAccent"/>
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:id="@+id/search_icon"
+            android:src="@drawable/search_icon" />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:id="@+id/notifications_icon"
+            android:src="@drawable/notifications_icon" />
+    </LinearLayout>
+</RelativeLayout>
