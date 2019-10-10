@@ -103,7 +103,8 @@
         android:orientation="horizontal"
         android:layout_alignParentBottom="true"
         android:id="@+id/bottom_menu"
-        android:layout_marginTop="8dp">
+        android:layout_marginTop="8dp"
+        android:background="@color/colorInactive">
         <ImageView
             android:layout_width="0dp"
             android:layout_height="48dp"
