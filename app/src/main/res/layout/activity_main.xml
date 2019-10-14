@@ -1,37 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:orientation="vertical"
     tools:context="MainActivity">
 
-    <EditText
-        android:id="@+id/email"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:hint="Email"
-        android:layout_marginTop="48dp"/>
-
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:hint="Password"
-        android:inputType="textPassword" />
-
-    <Button
-        android:id="@+id/login"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:text="Welcome to MusicBuds!"
+        android:textSize="20sp"
         android:layout_marginTop="48dp"
         android:layout_gravity="center_horizontal"
-        android:background="@color/colorAccent"
-        android:text="Sign in"
-        android:textColor="@color/colorPrimaryDark"
-        android:onClick="signIn"/>
+        android:visibility="visible"/>
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/sign_in_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_marginTop="48dp"
+        android:layout_gravity="center_horizontal"
+        android:visibility="visible"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:layout_width="104dp"
+            android:layout_height="104dp"
+            android:layout_marginTop="48dp"
+            app:civ_border_color="@color/colorAccent"
+            app:civ_border_width="4dp"
+            android:id="@+id/profilePic"
+            android:layout_centerHorizontal="true"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/displayName"
+            android:layout_marginTop="8dp"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_below="@+id/profilePic"
+            android:layout_centerHorizontal="true"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            android:layout_below="@+id/displayName"
+            android:layout_centerHorizontal="true">
+
+            <Button
+                android:id="@+id/continue_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Continue"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/sign_out_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Logout"
+                android:visibility="gone" />
+        </LinearLayout>
+    </RelativeLayout>
+
 </LinearLayout>

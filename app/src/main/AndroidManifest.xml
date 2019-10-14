@@ -17,10 +17,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".WelcomeActivity" />
-        <activity
-            android:name=".AddMusicActivity" />
-        <activity
             android:name=".ProfileMusicActivity" />
         <activity
             android:name=".ProfilePostsActivity" />
